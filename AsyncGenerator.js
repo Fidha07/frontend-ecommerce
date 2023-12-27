@@ -1,5 +1,5 @@
-var OverloadYield = require("./OverloadYield.js");
-function AsyncGenerator(e) {
+import OverloadYield from "./OverloadYield.js";
+export default function AsyncGenerator(e) {
   var r, t;
   function resume(r, t) {
     try {
@@ -61,4 +61,3 @@ AsyncGenerator.prototype["function" == typeof Symbol && Symbol.asyncIterator || 
 }, AsyncGenerator.prototype["return"] = function (e) {
   return this._invoke("return", e);
 };
-module.exports = AsyncGenerator, module.exports.__esModule = true, module.exports["default"] = module.exports;

@@ -1,6 +1,6 @@
-var _typeof = require("./typeof.js")["default"];
-var setFunctionName = require("./setFunctionName.js");
-var toPropertyKey = require("./toPropertyKey.js");
+import _typeof from "./typeof.js";
+import setFunctionName from "./setFunctionName.js";
+import toPropertyKey from "./toPropertyKey.js";
 function applyDecs2203RFactory() {
   function createAddInitializerMethod(e, t) {
     return function (r) {
@@ -185,7 +185,6 @@ function applyDecs2203RFactory() {
     };
   };
 }
-function applyDecs2203R(e, t, r) {
-  return (module.exports = applyDecs2203R = applyDecs2203RFactory(), module.exports.__esModule = true, module.exports["default"] = module.exports)(e, t, r);
+export default function applyDecs2203R(e, t, r) {
+  return (applyDecs2203R = applyDecs2203RFactory())(e, t, r);
 }
-module.exports = applyDecs2203R, module.exports.__esModule = true, module.exports["default"] = module.exports;

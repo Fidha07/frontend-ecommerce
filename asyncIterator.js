@@ -1,4 +1,4 @@
-function _asyncIterator(r) {
+export default function _asyncIterator(r) {
   var n,
     t,
     o,
@@ -42,4 +42,3 @@ function AsyncFromSyncIterator(r) {
     }
   }, new AsyncFromSyncIterator(r);
 }
-module.exports = _asyncIterator, module.exports.__esModule = true, module.exports["default"] = module.exports;
