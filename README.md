@@ -1,115 +1,70 @@
-# ESLintRC Library
+# Getting Started with Create React App
 
-This repository contains the legacy ESLintRC configuration file format for ESLint. This package is not intended for use outside of the ESLint ecosystem. It is ESLint-specific and not intended for use in other programs.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**Note:** This package is frozen except for critical bug fixes as ESLint moves to a new config system.
+## Available Scripts
 
-## Installation
+In the project directory, you can run:
 
-You can install the package as follows:
+### `npm start`
 
-```
-npm install @eslint/eslintrc --save-dev
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-# or
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-yarn add @eslint/eslintrc -D
-```
+### `npm test`
 
-## Usage (ESM)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-The primary class in this package is `FlatCompat`, which is a utility to translate ESLintRC-style configs into flat configs. Here's how you use it inside of your `eslint.config.js` file:
+### `npm run build`
 
-```js
-import { FlatCompat } from "@eslint/eslintrc";
-import js from "@eslint/js";
-import path from "path";
-import { fileURLToPath } from "url";
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-// mimic CommonJS variables -- not needed if using CommonJS
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-const compat = new FlatCompat({
-    baseDirectory: __dirname,                  // optional; default: process.cwd()
-    resolvePluginsRelativeTo: __dirname,       // optional
-    recommendedConfig: js.configs.recommended, // optional
-    allConfig: js.configs.all,                 // optional
-});
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-export default [
+### `npm run eject`
 
-    // mimic ESLintRC-style extends
-    ...compat.extends("standard", "example"),
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-    // mimic environments
-    ...compat.env({
-        es2020: true,
-        node: true
-    }),
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-    // mimic plugins
-    ...compat.plugins("airbnb", "react"),
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-    // translate an entire config
-    ...compat.config({
-        plugins: ["airbnb", "react"],
-        extends: "standard",
-        env: {
-            es2020: true,
-            node: true
-        },
-        rules: {
-            semi: "error"
-        }
-    })
-];
-```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Usage (CommonJS)
+## Learn More
 
-Using `FlatCompat` in CommonJS files is similar to ESM, but you'll use `require()` and `module.exports` instead of `import` and `export`. Here's how you use it inside of your `eslint.config.js` CommonJS file:
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-```js
-const { FlatCompat } = require("@eslint/eslintrc");
-const js = require("@eslint/js");
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-const compat = new FlatCompat({
-    baseDirectory: __dirname,                  // optional; default: process.cwd()
-    resolvePluginsRelativeTo: __dirname,       // optional
-    recommendedConfig: js.configs.recommended, // optional
-    allConfig: js.configs.all,                 // optional
-});
+### Code Splitting
 
-module.exports = [
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-    // mimic ESLintRC-style extends
-    ...compat.extends("standard", "example"),
+### Analyzing the Bundle Size
 
-    // mimic environments
-    ...compat.env({
-        es2020: true,
-        node: true
-    }),
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-    // mimic plugins
-    ...compat.plugins("airbnb", "react"),
+### Making a Progressive Web App
 
-    // translate an entire config
-    ...compat.config({
-        plugins: ["airbnb", "react"],
-        extends: "standard",
-        env: {
-            es2020: true,
-            node: true
-        },
-        rules: {
-            semi: "error"
-        }
-    })
-];
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-## License
+### Advanced Configuration
 
-MIT License
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
