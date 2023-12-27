@@ -1,19 +1,11 @@
-# @babel/types
+# V8 Coverage
 
-> Babel Types is a Lodash-esque utility library for AST nodes
+[![npm](https://img.shields.io/npm/v/@c88/v8-coverage.svg?maxAge=2592000)](https://www.npmjs.com/package/@c88/v8-coverage)
+[![GitHub repository](https://img.shields.io/badge/Github-demurgos%2Fv8--coverage-blue.svg)](https://github.com/demurgos/v8-coverage)
+[![Build status (Travis)](https://img.shields.io/travis/demurgos/v8-coverage/master.svg?maxAge=2592000)](https://travis-ci.org/demurgos/v8-coverage)
+[![Build status (AppVeyor)](https://ci.appveyor.com/api/projects/status/qgcbdffyb9e09d0e?svg=true)](https://ci.appveyor.com/project/demurgos/v8-coverage)
+[![Codecov](https://codecov.io/gh/demurgos/v8-coverage/branch/master/graph/badge.svg)](https://codecov.io/gh/demurgos/v8-coverage)
 
-See our website [@babel/types](https://babeljs.io/docs/babel-types) for more information or the [issues](https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20types%22+is%3Aopen) associated with this package.
+## License
 
-## Install
-
-Using npm:
-
-```sh
-npm install --save-dev @babel/types
-```
-
-or using yarn:
-
-```sh
-yarn add @babel/types --dev
-```
+[MIT License](./LICENSE.md)

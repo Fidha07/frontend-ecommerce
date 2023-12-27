@@ -1,40 +1,48 @@
 {
-  "name": "@babel/types",
-  "version": "7.23.6",
-  "description": "Babel Types is a Lodash-esque utility library for AST nodes",
-  "author": "The Babel Team (https://babel.dev/team)",
-  "homepage": "https://babel.dev/docs/en/next/babel-types",
-  "bugs": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20types%22+is%3Aopen",
+  "name": "@bcoe/v8-coverage",
+  "version": "0.2.3",
+  "description": "Helper functions for V8 coverage files.",
+  "author": "Charles Samborski <demurgos@demurgos.net> (https://demurgos.net)",
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
+  "main": "dist/lib/index",
+  "types": "dist/lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/babel/babel.git",
-    "directory": "packages/babel-types"
+    "url": "git://github.com/demurgos/v8-coverage.git"
   },
-  "main": "./lib/index.js",
-  "types": "./lib/index-legacy.d.ts",
-  "typesVersions": {
-    ">=3.7": {
-      "lib/index-legacy.d.ts": [
-        "lib/index.d.ts"
-      ]
-    }
-  },
-  "dependencies": {
-    "@babel/helper-string-parser": "^7.23.4",
-    "@babel/helper-validator-identifier": "^7.22.20",
-    "to-fast-properties": "^2.0.0"
+  "homepage": "https://demurgos.github.io/v8-coverage",
+  "scripts": {
+    "prepare": "gulp all:tsconfig.json && gulp dist",
+    "pretest": "gulp lib:build",
+    "test": "gulp test",
+    "lint": "gulp :lint:fix"
   },
   "devDependencies": {
-    "@babel/generator": "^7.23.6",
-    "@babel/parser": "^7.23.6",
-    "glob": "^7.2.0"
+    "@types/chai": "^4.1.4",
+    "@types/gulp": "^4.0.5",
+    "@types/minimist": "^1.2.0",
+    "@types/mocha": "^5.2.2",
+    "@types/node": "^10.5.4",
+    "chai": "^4.1.2",
+    "codecov": "^3.0.2",
+    "gulp": "^4.0.0",
+    "gulp-cli": "^2.0.1",
+    "minimist": "^1.2.0",
+    "pre-commit": "^1.2.2",
+    "ts-node": "^8.3.0",
+    "turbo-gulp": "^0.20.1"
   },
-  "engines": {
-    "node": ">=6.9.0"
-  },
-  "type": "commonjs"
+  "nyc": {
+    "include": [
+      "build/test/lib/**/*.js",
+      "build/test/lib/**/*.mjs"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "extension": [
+      ".mjs"
+    ]
+  }
 }
